@@ -1,7 +1,11 @@
-const { configureStore } = require('@reduxjs/toolkit');
+import { configureStore } from '@reduxjs/toolkit';
+import { todosInitState } from './todos/todosInitState';
+import { todosReducer } from './todos/todosSlice';
 
-const store = configureStore({
-  reduser: todosReduser,
+export const store = configureStore({
+  preloadedState: { todos: todosInitState },
+  devTools: true,
+  reducer: {
+    todos: todosReducer,
+  },
 });
-
-export default store;

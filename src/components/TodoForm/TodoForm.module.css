@@ -1,0 +1,12 @@
+.todo_form{
+    display: flex;
+}
+
+.todo_form__label{
+   margin: 10px;
+}
+
+.todo_form > [type='submit']{
+    align-self: center;
+    height: 30px;
+}

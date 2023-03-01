@@ -1,3 +1,1 @@
-export const todosInitState = {
-  todos: [],
-};
+export const todosInitState = [];
