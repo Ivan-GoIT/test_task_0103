@@ -6,16 +6,19 @@ const todosSlice = createSlice({
   name: 'todos',
   initialState: todosInitState,
   reducers: {
-    addTodoAction: (state, { payload }) => {
-      state.todos = state.todos.push(payload);
+    addTodo: (state, { payload }) => {
+      state = state.push(payload);
     },
 
-    deleteTodoAction: (state, { payload }) => {
-      state.todos = state.todos.filter(todo => todo.id !== payload);
+    deleteTodo: (state, { payload }) => {
+      const todoIndex = state.findIndex(todo => todo.id === payload);
+      if (todoIndex !== -1) {
+        state.splice(todoIndex, 1);
+      }
     },
 
-    toggleTodoStatusAction: (state, { payload }) => {
-      const todo = state.todos.find(todo => todo.id === payload);
+    toggleTodoStatus: (state, { payload }) => {
+      const todo = state.find(todo => todo.id === payload);
       if (todo) {
         const { pending, completed } = TODO_STATUS;
         todo.status = todo.status === pending ? completed : pending;

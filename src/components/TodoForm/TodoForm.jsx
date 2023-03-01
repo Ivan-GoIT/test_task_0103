@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import TODO_STATUS from 'constants/STATUS';
 import { addTodo } from 'redux/todos/todosSlice';
 
-import css from './TodoForm.module.css'
+import css from './TodoForm.module.css';
 
 export const TodoForm = () => {
   const dispatch = useDispatch();
@@ -26,14 +26,13 @@ export const TodoForm = () => {
     }
 
     const newTodo = createNewTodo();
-
     dispatch(addTodo(newTodo));
     setTitle('');
     setDescription('');
   };
 
   const handleOnChangeInput = evt => {
-    
+    evt.preventDefault();
     const name = evt.target.name;
     const value = evt.target.value;
 
@@ -42,7 +41,7 @@ export const TodoForm = () => {
         setTitle(value);
         break;
       case 'description':
-        setTitle(value);
+        setDescription(value);
         break;
 
       default:
@@ -64,7 +63,7 @@ export const TodoForm = () => {
         />
       </label>
       <label className={css.todo_form__label}>
-        Title:
+        Description:
         <input
           name="description"
           type="text"
@@ -74,7 +73,7 @@ export const TodoForm = () => {
           onChange={handleOnChangeInput}
         />
       </label>
-      <button type='submit' >Create</button>
+      <button type="submit">Create</button>
     </form>
   );
 };

@@ -1,4 +1,18 @@
 .todo_box{
   display: flex;
-  flex-direction: column;
+  background-color: #A5A5A5;
+  width: 750px;
 }
+
+[type='checkbox']{
+  transform: scale(2);
+
+
+}
+
+.todo_box>label{
+  display: flex;
+  justify-content: center;
+  
+}
+

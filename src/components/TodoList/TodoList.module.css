@@ -1,0 +1,16 @@
+.table_header {
+  display: flex;
+  text-transform: uppercase;
+  width: 600px;
+}
+
+.list_reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.column {
+  text-align: center;
+  width: 150px;
+}

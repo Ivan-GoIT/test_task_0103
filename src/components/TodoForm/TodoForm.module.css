@@ -1,12 +1,28 @@
-.todo_form{
-    display: flex;
+.todo_form {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.todo_form__label{
-   margin: 10px;
+.todo_form__label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  margin-bottom: 40px;
 }
 
-.todo_form > [type='submit']{
-    align-self: center;
-    height: 30px;
+.todo_form__label > input {
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+.todo_form > [type='submit'] {
+  align-self: center;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+}
+
+.todo_form__label > input,
+.todo_form > [type='submit'] {
+  border-radius: 5px;
+  border-color: #767676;
 }
